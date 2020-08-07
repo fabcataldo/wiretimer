@@ -5,12 +5,14 @@ const StopwatchButtonStyles = StyleSheet.create({
         width: 284,
         height: 284,
         alignItems: 'center',
+        textAlign: 'center',
         justifyContent: 'center',
         backgroundColor: '#00CD5E',
         borderRadius: 142
     },
     mainActionButtonText:{
         fontSize: 40,
+        textAlign: 'center',
         color:'#fff',
         fontWeight: 'bold'
     },
