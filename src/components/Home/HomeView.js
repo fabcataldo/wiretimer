@@ -20,7 +20,6 @@ class HomeView extends React.Component {
     }
 
     async handleAppStateChange(nextAppState){
-        console.log('nextAppState', nextAppState);
         const now = new Date().getTime();
         const {time, paused} = this.state;
 
@@ -30,7 +29,6 @@ class HomeView extends React.Component {
         const timeDifference = now - readStateTimestamp;
         const newTime = readTime + timeDifference;
 
-       // console.log('pausedd:  '+ this.state.paused)
         if(nextAppState === 'active'){
             const isPaused = await AsyncStorage.getItem('@isPaused');
             const wasPaused = isPaused && isPaused === 'true';
@@ -58,15 +56,11 @@ class HomeView extends React.Component {
     }
 
     startTimer(){
-        console.log('BIVONOA CAA')
         if(this.timerIntervalID){
             clearInterval(this.timerIntervalID);
         }
-        //console.log('this.timerIntervalID: '+this.timerIntervalID)
-        //console.log('time: '+this.state.time)
         this.timerIntervalID = setInterval(()=>{
             const {time, paused}=this.state;
-            //console.log('paused START TIMER: '+paused);
             if(!paused){
                 this.setState({
                     time: time + 1000
@@ -81,7 +75,7 @@ class HomeView extends React.Component {
     }
 
     render(){
-        const {time}=this.state;
+        const {time, paused}=this.state;
         return (
             <View style={[{flex:1},HomeViewStyles.viewContainer]}>
                 <View style={{flex:1}}>
@@ -91,6 +85,7 @@ class HomeView extends React.Component {
                 </View>
                 <View style={{flex:2}}>
                     <StopwatchButton 
+                        paused={paused}
                         time={time}
                         timerOnPressAction={this.pauseTimer}
                         startOnPressAction={this.startTimer}

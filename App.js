@@ -16,13 +16,6 @@ const App = () => {
   return (
     <>
     <SafeAreaView style={{flex: 1}}>
-      {/* 
-      <View>
-        <Text style={{height: 200, width: 200, backgroundColor: 'yellow'}}>
-          Hello world!
-        </Text>
-      </View>
-      */}
       <HomeView></HomeView>
     </SafeAreaView>
     </>
