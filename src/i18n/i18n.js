@@ -3,7 +3,8 @@ const i18n = {
     HOME: {
         WELCOME_HEADER: 'Good Morning',
         START: 'START',
-        PAUSE: 'PAUSE'
+        PAUSE: 'PAUSE',
+        FINISH_BTN_CAPTION: 'finish'
     },
     STOP_WATCH:{
         START: 'START',

@@ -9,6 +9,16 @@ const HomeViewStyles = StyleSheet.create({
     },
     viewContainer:{
         alignItems:"center"
+    },
+    finishButtonText: {
+        fontSize: 60,
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        color: "#EA4C4C"
+    },
+    buttonsContainer: {
+        alignItems: "center", 
+        justifyContent: 'space-between'
     }
 })
 
