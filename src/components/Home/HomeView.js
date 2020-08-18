@@ -61,6 +61,7 @@ class HomeView extends React.Component {
 
     startTimer() {
         this.clearTimer();
+        console.log('COMENCEEEee')
         this.timerIntervalID = setInterval(() => {
             const { time, paused } = this.state;
             if (!paused) {
@@ -83,7 +84,7 @@ class HomeView extends React.Component {
             return (
                 <TouchableOpacity onPress={() => {
                     this.clearTimer();
-                    this.props.navigation.navigate("Finish");
+                    this.props.navigation.navigate("Finish", {timeSpent: time});
                     this.setState({
                         time: 0
                     })

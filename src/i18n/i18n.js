@@ -1,5 +1,6 @@
 const i18n = {
     TIME_FORMAT: 'HH:mm:ss',
+    DATE_FORMAT: 'DD MMM YYYY',
     CANCEL: 'cancel',
     SAVE: 'save',
     HOME: {
@@ -15,6 +16,9 @@ const i18n = {
     FINISH: {
         MAIN_HEADER: 'You just spent',
         ACTIVITY_NAME_HEADER: 'Activity Name'
+    },
+    HISTORY:{
+        SAVED_ACTIVITIES: 'Saved activities'
     }
 }
 
