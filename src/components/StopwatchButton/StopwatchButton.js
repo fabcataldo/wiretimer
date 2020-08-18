@@ -17,14 +17,16 @@ const StopwatchButton = (props) => {
         if(paused){
             Animated.timing(timerOpacity, {
                 toValue: toValue,
-                duration: BLINK_DELAY
+                duration: BLINK_DELAY,
+                useNativeDriver: true
             }).start(()=>{
                 blinker(toValue === 1 ? 0 : 1);        
             });    
         } else{
             Animated.timing(timerOpacity, {
                 toValue: 1,
-                duration: BLINK_DELAY
+                duration: BLINK_DELAY,
+                useNativeDriver: true
             }).start();    
         }
     }
