@@ -4,18 +4,18 @@ import AsyncStorage from '@react-native-community/async-storage';
 import i18n from '../../i18n/i18n';
 import moment from 'moment';
 import HistoryViewStyles from './HistoryViewStyles';
+import { ACTIVITY_STORAGE_KEY } from '../../config/consts';
 
 const HistoryView = ()=>{
     const [activities, setActivities] = useState([]);
-    const storageKey = "@activities";
-    
+        
     const getActivities = async ()=>{
-        const activities = await AsyncStorage.getItem(storageKey);
+        const activities = await AsyncStorage.getItem(ACTIVITY_STORAGE_KEY);
         let parsedActivities = [];
         if(activities != null){
             parsedActivities = JSON.parse(activities);
         }
-        setActivities(parsedActivities);
+        setActivities(parsedActivities.reverse());
     }
 
     useEffect(()=>{
